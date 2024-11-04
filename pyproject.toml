@@ -4,13 +4,14 @@ version = "0.1.0"
 description = "Advanced RAG with Agents to help you read your emails"
 authors = ["ugm2 <unaigaraymaestre@gmail.com>"]
 readme = "README.md"
-packages = [{ include = "src" }]
+packages = [{ include = "emails", from = "src" }]
 
 [tool.poetry.dependencies]
 python = "^3.11"
 google-auth-oauthlib = "^1.2.1"
 google-api-python-client = "^2.149.0"
 rich = "^13.9.3"
+pytest = "^8.3.3"
 
 
 [build-system]

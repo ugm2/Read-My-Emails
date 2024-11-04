@@ -37,7 +37,7 @@ class LocalAuth:
                     self.app_credentials,
                     ["https://www.googleapis.com/auth/gmail.modify"],
                 )
-                creds = flow.run_local_server(port=0)
+                creds = flow.run_local_server(port=8080)
                 self._write_token(creds, self.user_credentials)
 
         return build("gmail", "v1", credentials=creds)

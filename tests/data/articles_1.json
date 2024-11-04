@@ -1,0 +1,107 @@
+[
+  {
+    "title": "AMD'S NEW LANGUAGE MODELS",
+    "content": "AMD used the OLMO codebase to train and release a language model trained on its accelerators.",
+    "section": "HEADLINES & LAUNCHES",
+    "reading_time": 12,
+    "newsletter_type": "TLDR AI"
+  },
+  {
+    "title": "OASIS BY ETCHED & DECART",
+    "content": "Etched and Decart's Oasis is an AI model that generates open-world games frame-by-frame from user inputs, showcasing advanced physical understanding and real-time interaction. Oasis uses a Diffusion Transformer architecture optimized for the upcoming Sohu chip, enabling large-scale, low-latency 4K video models. The model, which integrates custom hardware for improved performance at scale, represents a shift towards interactive AI-generated content.",
+    "section": "HEADLINES & LAUNCHES",
+    "reading_time": 4,
+    "newsletter_type": "TLDR AI"
+  },
+  {
+    "title": "OPENAI WILL START USING AMD CHIPS AND COULD MAKE ITS OWN AI HARDWARE IN 2026",
+    "content": "OpenAI is collaborating with Broadcom and TSMC to develop custom AI chips which are expected to begin production by 2026. Meanwhile, OpenAI is integrating AMD's MI300 chips into its Microsoft Azure infrastructure. Despite aligning with other tech giants on custom chip strategies, OpenAI remains behind Google, Microsoft, and Amazon in hardware development.",
+    "section": "HEADLINES & LAUNCHES",
+    "reading_time": 2,
+    "newsletter_type": "TLDR AI"
+  },
+  {
+    "title": "3D SCENE RECONSTRUCTION WITHOUT CAMERA POSE",
+    "content": "NoPoSplat is a feed-forward model that can reconstruct 3D scenes from sparse, multi-view images without needing accurate camera poses.",
+    "section": "RESEARCH & INNOVATION",
+    "reading_time": 6,
+    "newsletter_type": "TLDR AI"
+  },
+  {
+    "title": "IMPROVING LANGUAGE MODELS' REASONING",
+    "content": "This study tackles a unique challenge in LLMs: how well they handle reasoning prompts that contain irrelevant or incorrect rationale snippets.",
+    "section": "RESEARCH & INNOVATION",
+    "reading_time": 19,
+    "newsletter_type": "TLDR AI"
+  },
+  {
+    "title": "LONG-CONTEXT EVALUATION IN LANGUAGE MODELS",
+    "content": "This study identifies a key flaw in using perplexity (PPL) to evaluate LLMs' long-context capabilities - PPL averages across all tokens and misses crucial ones needed for understanding extended inputs. To improve this, the authors introduce LongPPL, a metric that highlights these essential tokens for a clearer measure of long-context performance. ‍",
+    "section": "RESEARCH & INNOVATION",
+    "reading_time": 18,
+    "newsletter_type": "TLDR AI"
+  },
+  {
+    "title": "FAST VS. SLOW THINKING IN LANGUAGE MODELS",
+    "content": "This project explores how different \"thinking\" approaches — fast (concise) versus slow (detailed, like chain-of-thought reasoning) — impact layer-wise gradients and stability in LLMs.",
+    "section": "ENGINEERING & RESOURCES",
+    "reading_time": null,
+    "newsletter_type": "TLDR AI"
+  },
+  {
+    "title": "3D OBJECT DETECTION USING ONLY 2D IMAGES",
+    "content": "ImOV3D is a framework that advances open-vocabulary 3D object detection (OV-3Det) by leveraging 2D images to overcome the scarcity of 3D annotations.",
+    "section": "ENGINEERING & RESOURCES",
+    "reading_time": null,
+    "newsletter_type": "TLDR AI"
+  },
+  {
+    "title": "REALISTIC MOTION IN TEXT-TO-VIDEO GENERATION",
+    "content": "DEMO is a framework that separates text and conditioning into content and motion components. By using distinct encoders and conditioning for static content and dynamic motion, DEMO better interprets and generates motion from text prompts.",
+    "section": "ENGINEERING & RESOURCES",
+    "reading_time": 3,
+    "newsletter_type": "TLDR AI"
+  },
+  {
+    "title": "PROJECT SID",
+    "content": "Project Sid shows civilizational progress, specialization, governance, and the invention and spread of memes and religion. These were made possible by Altera's new cognitive architecture: PIANO.",
+    "section": "MISCELLANEOUS",
+    "reading_time": 4,
+    "newsletter_type": "TLDR AI"
+  },
+  {
+    "title": "WE'RE FORKING FLUTTER. THIS IS WHY",
+    "content": "Google's corporate focus shift to AI has deprioritized Flutter's desktop platforms, creating a labor shortage for this once rapidly expanding UI toolkit. In response, a fork named Flock is being developed to include essential bug fixes and features the Flutter team can't tackle, aiming to accelerate Flutter's growth through community involvement. Flock plans to improve contribution processes and streamline PR reviews, bridging the gap in support and development pace left by the main Flutter team.",
+    "section": "MISCELLANEOUS",
+    "reading_time": 11,
+    "newsletter_type": "TLDR AI"
+  },
+  {
+    "title": "USING REINFORCEMENT LEARNING AND $4.80 OF GPU TIME TO FIND THE BEST HN POST EVER (RLHF PART 1)",
+    "content": "This article discusses using reinforcement learning from human feedback (RLHF) to develop a reward model that predicts upvote counts for Hacker News stories. Leveraging a comprehensive dataset and $4.80 of GPU time, the reward model was trained on features like titles, authors, and content to optimize for post quality, with the ultimate goal of utilizing RLHF techniques to enhance the creation of high-value content. The resulting model, while not perfect, can successfully identify underappreciated stories and predict potential front-page hits.",
+    "section": "MISCELLANEOUS",
+    "reading_time": 11,
+    "newsletter_type": "TLDR AI"
+  },
+  {
+    "title": "GOOGLE'S AI SEARCH SUMMARIES ARE ROLLING OUT TO OVER 100 MORE COUNTRIES",
+    "content": "Google's AI Overviews are expanding to over 100 countries, offering AI-generated search summaries in multiple languages.",
+    "section": "QUICK LINKS",
+    "reading_time": 1,
+    "newsletter_type": "TLDR AI"
+  },
+  {
+    "title": "ELON MUSK FINALLY ADMITS TESLA'S HW3 MIGHT NOT SUPPORT FULL SELF-DRIVING",
+    "content": "Elon Musk admitted Tesla's HW3 might not support full self-driving and that HW4 is significantly more capable.",
+    "section": "QUICK LINKS",
+    "reading_time": 3,
+    "newsletter_type": "TLDR AI"
+  },
+  {
+    "title": "NVIDIA ETHERNET NETWORKING ACCELERATES WORLD'S LARGEST AI SUPERCOMPUTER, BUILT BY XAI",
+    "content": "xAI's Colossus is powered by NVIDIA's Spectrum-X Ethernet networking platform.",
+    "section": "QUICK LINKS",
+    "reading_time": 3,
+    "newsletter_type": "TLDR AI"
+  }
+]

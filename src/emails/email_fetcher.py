@@ -1,13 +1,13 @@
 import base64
 import logging
 import os
-from typing import Callable, Dict, List
+from typing import Dict, List
 
 from rich.logging import RichHandler
 
-from src.emails.auth import LocalAuth
+from emails.auth import LocalAuth
+from emails.content_parser import ContentParserInterface
 
-# Get the logger level from environment variables. Default to WARNING if not set.
 LOGGER_LEVEL = os.getenv("LOGGER_LEVEL", "WARNING")
 logging.basicConfig(level=LOGGER_LEVEL, format="%(message)s", handlers=[RichHandler()])
 logger = logging.getLogger("EmailFetcher")
@@ -53,7 +53,6 @@ class EmailFetcher:
             all_emails.extend(response.get("messages", []))
             logger.info(f"Fetched {len(all_emails)} emails so far.")
 
-            # If max_results is specified and we've fetched enough emails, break the loop.
             if max_results is not None and len(all_emails) >= max_results:
                 logger.info("Breaking due to max_results")
                 break
@@ -125,7 +124,7 @@ class EmailFetcher:
         return base64.urlsafe_b64decode(data).decode("utf-8")
 
     def get_articles_from_emails(
-        self, emails: List[Dict], content_parser: Callable
+        self, emails: List[Dict], content_parser: ContentParserInterface
     ) -> List:
         """
         Extracts articles from a list of emails using a specific content parser.
@@ -141,6 +140,8 @@ class EmailFetcher:
         for email in emails:
             email_data = self.get_email_data(email["id"])
             content = self.get_body(email_data)
-            articles += content_parser(content)
+            print("--- EMAIL ---")
+            print(content)
+            articles += content_parser.parse_content(content)
         logger.info(f"Extracted {len(articles)} articles from emails.")
         return articles
