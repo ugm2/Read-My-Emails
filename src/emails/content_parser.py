@@ -157,16 +157,12 @@ class TLDRContentParser(ContentParserInterface):
             return True
         return False
 
-    def _parse_article(
-        self, lines: List[str], start_index: int, current_section: str, newsletter_type: str, link_mappings: Dict[str, str]
-    ) -> Tuple[Dict[str, str], int]:
-        """Parse an article starting from the given index."""
-        i = start_index
+    def _extract_link_and_title(self, lines: List[str], index: int, link_mappings: Dict[str, str]) -> Tuple[str, str, int]:
+        """Extract the link from the title line or the next line and update the title accordingly."""
+        i = index
         line = lines[i].strip()
-        time_match = self.reading_time_pattern.search(line)
         title_line = line
         title = self.reading_time_pattern.sub('', line).strip()
-        reading_time = int(time_match.group(1)) if time_match.group(1) else None
 
         # Initialize link
         link = None
@@ -188,6 +184,20 @@ class TLDRContentParser(ContentParserInterface):
                     link = link_mappings.get(link_number)
                     # Skip the link number line
                     i += 1
+
+        return link, title, i
+
+    def _parse_article(
+        self, lines: List[str], start_index: int, current_section: str, newsletter_type: str, link_mappings: Dict[str, str]
+    ) -> Tuple[Dict[str, str], int]:
+        """Parse an article starting from the given index."""
+        i = start_index
+        line = lines[i].strip()
+        time_match = self.reading_time_pattern.search(line)
+        reading_time = int(time_match.group(1)) if time_match.group(1) else None
+
+        # Extract link and update title and index
+        link, title, i = self._extract_link_and_title(lines, i, link_mappings)
 
         # Check previous line for additional title content
         if start_index > 0 and self._is_title_line(lines[start_index - 1].strip()):
@@ -216,3 +226,4 @@ class TLDRContentParser(ContentParserInterface):
         }
 
         return article, i
+
