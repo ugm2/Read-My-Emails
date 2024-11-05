@@ -198,3 +198,32 @@ If you don't want to receive future editions of TLDR AI, please
 unsubscribe from TLDR AI [24] or manage all of your TLDR newsletter
 subscriptions [25]. 
 
+ 
+
+Links:
+------
+[1] https://tldr.tech/ai?utm_source=tldrai
+[2] https://advertise.tldr.tech/?utm_source=tldrai&utm_medium=newsletter&utm_campaign=advertisetopnav
+[3] https://a.tldrnewsletter.com/web-version?ep=1&lc=e421bc92-b4ed-11ed-b4c4-33c00cd07e37&p=41d7bc1a-9a9d-11ef-975c-0522eb0d38bc&pt=campaign&t=1730730250&s=cd554aaaf614c4337149ef6fa3c955bd4092c295cf9396745d9ec7229b6b84a7
+[4] https://get.incogni.io/aff_c?offer_id=1151&aff_id=16286
+[5] https://www.amd.com/en/developer/resources/technical-articles/introducing-the-first-amd-1b-language-model.html?utm_source=tldrai
+[6] https://www.etched.com/blog-posts/oasis?utm_source=tldrai
+[7] https://www.theverge.com/2024/10/29/24282843/openai-custom-hardware-amd-nvidia-ai-chips?utm_source=tldrai
+[8] https://noposplat.github.io/?utm_source=tldrai
+[9] https://arxiv.org/abs/2410.23856v1?utm_source=tldrai
+[10] https://arxiv.org/abs/2410.23771v1?utm_source=tldrai
+[11] https://www.qawolf.com/?utm_source=tldr_ai&utm_medium=newsletter&utm_campaign=ScaleAutomatedQ10232024
+[12] https://github.com/mingliiii/layer_gradient?utm_source=tldrai
+[13] https://github.com/yangtiming/imov3d?utm_source=tldrai
+[14] https://pr-ryan.github.io/DEMO-project/?utm_source=tldrai
+[15] https://threadreaderapp.com/thread/1852397383939960926.html?utm_source=tldrai
+[16] https://flutterfoundation.dev/blog/posts/we-are-forking-flutter-this-is-why/?utm_source=tldrai
+[17] https://openpipe.ai/blog/hacker-news-rlhf-part-1?utm_source=tldrai
+[18] https://www.theverge.com/2024/10/28/24281860/google-ai-search-summaries-expand-more-countries?utm_source=tldrai
+[19] https://electrek.co/2024/10/23/elon-musk-finally-admits-teslas-hw3-might-not-support-full-self-driving/?utm_source=tldrai
+[20] https://nvidianews.nvidia.com/news/spectrum-x-ethernet-networking-xai-colossus?utm_source=tldrai
+[21] https://refer.tldr.tech/ab19e64a/2
+[22] https://hub.sparklp.co/sub_20e099a937fc/2
+[23] https://advertise.tldr.tech/?utm_source=tldrai&utm_medium=newsletter&utm_campaign=advertisecta
+[24] https://a.tldrnewsletter.com/unsubscribe?ep=1&l=eedf6b14-3de3-11ed-9a32-0241b9615763&lc=e421bc92-b4ed-11ed-b4c4-33c00cd07e37&p=41d7bc1a-9a9d-11ef-975c-0522eb0d38bc&pt=campaign&pv=4&spa=1730728897&t=1730730250&s=d62290c51755ab0ed601a203f24a296a8ede238b504e7bdcdb54b9b224fe0a04
+[25] https://tldr.tech/ai/manage?email=unaigaraymaestre%40gmail.com

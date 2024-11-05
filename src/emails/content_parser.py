@@ -33,6 +33,7 @@ class ContentParserInterface(ABC):
                 - section: Section the article belongs to
                 - reading_time: Extracted reading time in minutes
                 - newsletter_type: Either 'TLDR' or 'TLDR AI'
+                - link: The URL of the article
         """
         pass
 
@@ -71,6 +72,7 @@ class TLDRContentParser(ContentParserInterface):
             'Track your referrals',
             'If you have any comments'
         }
+        self.link_pattern = re.compile(r'\[(\d+)\]\s*(\S+)')
 
         logger.info("TLDRContentParser initialized with patterns")
 
@@ -80,6 +82,9 @@ class TLDRContentParser(ContentParserInterface):
         lines = content.splitlines()
         current_section = None
         i = 0
+
+        # Extract link mappings
+        link_mappings = self._extract_links(lines)
 
         while i < len(lines):
             line = lines[i].strip()
@@ -94,7 +99,9 @@ class TLDRContentParser(ContentParserInterface):
                 continue
 
             if self._is_article_start(line):
-                article, i = self._parse_article(lines, i, current_section, newsletter_type)
+                article, i = self._parse_article(
+                    lines, i, current_section, newsletter_type, link_mappings
+                )
                 if article:
                     articles.append(article)
                 continue
@@ -103,6 +110,17 @@ class TLDRContentParser(ContentParserInterface):
 
         logger.info(f"Parsed {len(articles)} articles from {newsletter_type}")
         return articles
+
+    def _extract_links(self, lines: List[str]) -> Dict[str, str]:
+        """Extract link mappings from the content."""
+        link_mappings = {}
+        for line in lines:
+            line = line.strip()
+            match = self.link_pattern.match(line)
+            if match:
+                link_number, url = match.groups()
+                link_mappings[link_number] = url
+        return link_mappings
 
     def _is_section_header(self, line: str) -> bool:
         """Check if the line is a section header."""
@@ -131,6 +149,8 @@ class TLDRContentParser(ContentParserInterface):
             return True
         if self.reading_time_pattern.search(line):
             return True
+        if self._is_article_start(line):
+            return True
         if self._is_title_line(line) and index + 1 < len(lines) and self.reading_time_pattern.search(lines[index + 1].strip()):
             return True
         if any(ending in line for ending in self.newsletter_endings):
@@ -138,23 +158,45 @@ class TLDRContentParser(ContentParserInterface):
         return False
 
     def _parse_article(
-        self, lines: List[str], start_index: int, current_section: str, newsletter_type: str
+        self, lines: List[str], start_index: int, current_section: str, newsletter_type: str, link_mappings: Dict[str, str]
     ) -> Tuple[Dict[str, str], int]:
         """Parse an article starting from the given index."""
         i = start_index
         line = lines[i].strip()
         time_match = self.reading_time_pattern.search(line)
+        title_line = line
         title = self.reading_time_pattern.sub('', line).strip()
         reading_time = int(time_match.group(1)) if time_match.group(1) else None
 
+        # Initialize link
+        link = None
+
+        # Check for link number in title line
+        link_number_match = re.search(r'\[(\d+)\]', title_line)
+        if link_number_match:
+            link_number = link_number_match.group(1)
+            link = link_mappings.get(link_number)
+            # Remove link number from title
+            title = re.sub(r'\[\d+\]', '', title).strip()
+        else:
+            # Check the next line for a link number
+            if i + 1 < len(lines):
+                next_line = lines[i + 1].strip()
+                next_line_link_match = re.match(r'\[(\d+)\]', next_line)
+                if next_line_link_match:
+                    link_number = next_line_link_match.group(1)
+                    link = link_mappings.get(link_number)
+                    # Skip the link number line
+                    i += 1
+
         # Check previous line for additional title content
-        if i > 0 and self._is_title_line(lines[i - 1].strip()):
-            prev_line = lines[i - 1].strip()
+        if start_index > 0 and self._is_title_line(lines[start_index - 1].strip()):
+            prev_line = lines[start_index - 1].strip()
             title = f"{prev_line} {title}"
 
         # Collect content lines
-        content_lines = []
         i += 1
+        content_lines = []
         while i < len(lines) and not self._should_stop_parsing(lines, i):
             content_line = lines[i].strip()
             if content_line:
@@ -163,12 +205,14 @@ class TLDRContentParser(ContentParserInterface):
 
         # Clean and assemble content
         cleaned_content = self.emoji_pattern.sub('', ' '.join(content_lines)).strip()
+
         article = {
             'title': title,
             'content': cleaned_content,
             'section': current_section,
             'reading_time': reading_time,
-            'newsletter_type': newsletter_type
+            'newsletter_type': newsletter_type,
+            'link': link
         }
 
         return article, i

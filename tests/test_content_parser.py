@@ -19,6 +19,7 @@ article formatting.
 
 import json
 import os
+
 from emails.content_parser import TLDRContentParser
 
 
@@ -53,6 +54,7 @@ def test_parse_tldr_ai_newsletter():
         assert parsed['section'] == expected['section']
         assert parsed['reading_time'] == expected['reading_time']
         assert parsed['newsletter_type'] == "TLDR AI"
+        assert parsed['link'] == expected['link']
 
 
 def test_parse_tldr_newsletter():
@@ -73,6 +75,28 @@ def test_parse_tldr_newsletter():
         assert parsed['section'] == expected['section']
         assert parsed['reading_time'] == expected['reading_time']
         assert parsed['newsletter_type'] == "TLDR"
+        assert parsed['link'] == expected['link']
+
+
+def test_tldr_link_format():
+    """Test that parsed links have the correct format"""
+    parser = TLDRContentParser()
+    test_content = """
+    HEADLINES & LAUNCHES
+    
+    TEST ARTICLE (2 MINUTE READ) [5]
+    Some content
+    
+    [5] https://example.com/article?utm_source=tldrai
+    """
+    parsed_articles = parser.parse_content(test_content)
+    
+    for article in parsed_articles:
+        assert 'link' in article
+        assert isinstance(article['link'], str)
+        assert article['link'].strip() != ""
+        assert article['link'].startswith(('http://', 'https://'))
+        assert 'utm_source=tldr' in article['link']
 
 
 def test_tldr_parser_initialization():

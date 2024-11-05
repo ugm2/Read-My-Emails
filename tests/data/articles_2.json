@@ -4,83 +4,95 @@
     "content": "Apple is acquiring Pixelmator, a Lithuanian firm that makes popular Mac-based photo editing tools, pending regulatory approval. Regulatory approval may be an issue - several large companies have had to abandon deals due to opposition from EU regulators. It is unknown whether Apple intends to integrate Pixelmator's features into its own apps or allow the apps to remain separate standalone apps. Pixelmator Pro recently introduced a number of AI and ML tools for adjusting photos and creating masks, vector tools, and support for more RAW photo formats and other design tool files.",
     "section": "BIG TECH & STARTUPS",
     "reading_time": 2,
-    "newsletter_type": "TLDR"
+    "newsletter_type": "TLDR",
+    "link": "https://arstechnica.com/gadgets/2024/11/apple-is-acquiring-image-editing-firm-pixelmator/#gsc.tab=0?utm_source=tldrnewsletter"
   },
   {
     "title": "GOOGLE'S 'BIG SLEEP' AI PROJECT UNCOVERS REAL SOFTWARE VULNERABILITIES",
     "content": "Big Sleep is an AI agent designed to mimic the workflow of a human security researcher. It recently discovered a previously unknown and exploitable bug in SQLite. This may be the first public example of an AI agent finding a previously unknown exploitable memory-safety issue in widely used real-world software.",
     "section": "BIG TECH & STARTUPS",
     "reading_time": 3,
-    "newsletter_type": "TLDR"
+    "newsletter_type": "TLDR",
+    "link": "https://links.tldrnewsletter.com/SnRtdF"
   },
   {
     "title": "SEMAGLUTIDE SO EFFECTIVE AT TREATING ARTHRITIS THAT PATIENTS WERE “MORE OR LESS WERE TREATED OUT OF THE STUDY”",
     "content": "A trial testing semaglutide on patients with knee osteoarthritis conducted in 11 countries found that the drug was so effective at treating the condition the participants no longer needed treatment by the end of the experiment. The study involved 400 obese patients who experienced pain when walking. The patients who received the drug lost weight, felt significantly less pain, and experienced more ease of everyday mobility compared to patients who received a placebo. Many of the improvements were due to taking weight off the affected knees, but the researchers think that semaglutide's anti-inflammatory effects also played a role.",
     "section": "SCIENCE & FUTURISTIC TECHNOLOGY",
     "reading_time": 2,
-    "newsletter_type": "TLDR"
+    "newsletter_type": "TLDR",
+    "link": "https://futurism.com/neoscope/semaglutide-arthritis-study-success?utm_source=tldrnewsletter"
   },
   {
     "title": "PG_FLO",
     "content": "pg_flo is a tool for moving and transforming data between PostgreSQL databases using logical replication. It features real-time data streaming, fast initial loads, powerful transformations, and flexible routing. pg_flo can be used for real-time data replication between PostgreSQL databases, ETL pipelines with data transformation, data re-routing, masking, and filtering, database migration with zero downtime, and event streaming from PostgreSQL.",
     "section": "PROGRAMMING, DESIGN & DATA SCIENCE",
     "reading_time": null,
-    "newsletter_type": "TLDR"
+    "newsletter_type": "TLDR",
+    "link": "https://github.com/shayonj/pg_flo?utm_source=tldrnewsletter"
   },
   {
     "title": "CASH",
     "content": "Cash is a jQuery alternative for modern browsers that utilizes modern browser features. It provides a jQuery-style syntax for manipulating the DOM. Cash doesn't have full feature parity with jQuery, but it covers most day-to-day use cases.",
     "section": "PROGRAMMING, DESIGN & DATA SCIENCE",
     "reading_time": null,
-    "newsletter_type": "TLDR"
+    "newsletter_type": "TLDR",
+    "link": "https://github.com/fabiospampinato/cash?utm_source=tldrnewsletter"
   },
   {
     "title": "WHAT IF A.I. IS ACTUALLY GOOD FOR HOLLYWOOD?",
     "content": "AI can be used to create films that were not possible just a few years ago. It can help create special effects that would otherwise require hundreds of VFX artists, tens of millions of dollars, and months of post-production work in just minutes. AI has the potential to disrupt many aspects of the film industry. This article takes a look at how some filmmakers are using AI to create movies and discusses the impact that AI will have on movie-making.",
     "section": "MISCELLANEOUS",
     "reading_time": 26,
-    "newsletter_type": "TLDR"
+    "newsletter_type": "TLDR",
+    "link": "https://links.tldrnewsletter.com/RdXq68"
   },
   {
     "title": "TOUCHSCREENS ARE OUT, AND TACTILE CONTROLS ARE BACK",
-    "content": "[15] Designers are reintroducing buttons to their products. This 're-buttonization' could be a response to everything becoming a touchscreen. People like physical buttons because they don't have to look at them and they offer a greater range of tactility and feedback. This article contains an interview with Rachel Plotnick, an associate professor of Cinema and Media Studies at Indiana University in Bloomington, where she discusses the history of buttons, the rise of touchscreens, the shift back to buttons and physical controls, and more.",
+    "content": "Designers are reintroducing buttons to their products. This 're-buttonization' could be a response to everything becoming a touchscreen. People like physical buttons because they don't have to look at them and they offer a greater range of tactility and feedback. This article contains an interview with Rachel Plotnick, an associate professor of Cinema and Media Studies at Indiana University in Bloomington, where she discusses the history of buttons, the rise of touchscreens, the shift back to buttons and physical controls, and more.",
     "section": "MISCELLANEOUS",
     "reading_time": 6,
-    "newsletter_type": "TLDR"
+    "newsletter_type": "TLDR",
+    "link": "https://spectrum.ieee.org/touchscreens?utm_source=tldrnewsletter"
   },
   {
     "title": "INCENTIVE INFRASTRUCTURE",
     "content": "Positive incentives are hard to design but have long-lasting positive effects if done correctly.",
     "section": "QUICK LINKS",
     "reading_time": 9,
-    "newsletter_type": "TLDR"
+    "newsletter_type": "TLDR",
+    "link": "https://www.rhyslindmark.com/incentive-infrastructure/?utm_source=tldrnewsletter"
   },
   {
     "title": "C INTERMEDIATE LANGUAGE (CIL)",
     "content": "CIL facilitates program analysis and transformation by parsing and type-checking programs and compiling them into a simplified subset of C.",
     "section": "QUICK LINKS",
     "reading_time": null,
-    "newsletter_type": "TLDR"
+    "newsletter_type": "TLDR",
+    "link": "https://github.com/goblint/cil?utm_source=tldrnewsletter"
   },
   {
     "title": "EARLY APPLE M4 PRO AND M4 MAX BENCHMARKS HINT AT A MASSIVE PERFORMANCE BOOST",
     "content": "The M4 Pro can smoothly outperform Mac Studio with the M2 Ultra.",
     "section": "QUICK LINKS",
     "reading_time": 2,
-    "newsletter_type": "TLDR"
+    "newsletter_type": "TLDR",
+    "link": "https://www.neowin.net/news/early-apple-m4-pro-and-m4-max-benchmarks-hint-at-a-massive-performance-boost/?utm_source=tldrnewsletter"
   },
   {
     "title": "LEAVING STRIPE",
     "content": "This post tells the story of one person's journey joining Stripe and working there for four years.",
     "section": "QUICK LINKS",
     "reading_time": 15,
-    "newsletter_type": "TLDR"
+    "newsletter_type": "TLDR",
+    "link": "https://jondlm.github.io/website/blog/leaving_stripe/?utm_source=tldrnewsletter"
   },
   {
     "title": "Y COMBINATOR APPLICATION GUIDE",
     "content": "This is a simple guide on how to build successful applications and avoid common pitfalls.",
     "section": "QUICK LINKS",
     "reading_time": 14,
-    "newsletter_type": "TLDR"
+    "newsletter_type": "TLDR",
+    "link": "https://getfluently.notion.site/Y-Combinator-Application-Guide-1286a9ce04d98004b4dac50cf66fb883?utm_source=tldrnewsletter"
   }
 ]

@@ -195,3 +195,34 @@ Dan Ni & Stephen Flanders
 If you don't want to receive future editions of TLDR, please
 unsubscribe from TLDR [25] or manage all of your TLDR newsletter
 subscriptions [26]. 
+
+ 
+
+Links:
+------
+[1] https://tldr.tech/signup?utm_source=tldr
+[2] https://advertise.tldr.tech/?utm_source=tldr&utm_medium=newsletter&utm_campaign=advertisetopnav
+[3] https://a.tldrnewsletter.com/web-version?ep=1&lc=4c29695b-384c-11ea-be00-06b4694bee2a&p=7a633c0a-9a82-11ef-b075-51a80ef80d17&pt=campaign&t=1730719279&s=b0ae845cf0782a19ba97f20edbfe4c72f9b44ba9343db1bcd18424668bcd7a29
+[4] https://workos.com/blog/from-rbac-to-fine-grained-authorization-part-i-design-your-model?utm_medium=newsletter&utm_source=tldr-tech&utm_campaign=20241104
+[5] https://workos.com/blog/from-rbac-to-fine-grained-authorization-part-i-design-your-model?utm_medium=newsletter&utm_source=tldr-tech&utm_campaign=20241030
+[6] https://arstechnica.com/gadgets/2024/11/apple-is-acquiring-image-editing-firm-pixelmator/#gsc.tab=0?utm_source=tldrnewsletter
+[7] https://links.tldrnewsletter.com/SnRtdF
+[8] https://techcrunch.com/2024/11/01/spacex-wants-to-test-refueling-starships-in-space-early-next-year/?utm_source=tldrnewsletter
+[9] https://futurism.com/neoscope/semaglutide-arthritis-study-success?utm_source=tldrnewsletter
+[10] https://advertise.tldr.tech/?utm_source=tldr&utm_medium=newsletter&utm_campaign=secondary11042024
+[11] https://advertise.tldr.tech/?utm_source=tldrmarketing&utm_medium=newsletter&utm_campaign=primary11042024
+[12] https://github.com/shayonj/pg_flo?utm_source=tldrnewsletter
+[13] https://github.com/fabiospampinato/cash?utm_source=tldrnewsletter
+[14] https://links.tldrnewsletter.com/RdXq68
+[15] https://spectrum.ieee.org/touchscreens?utm_source=tldrnewsletter
+[16] https://links.tldrnewsletter.com/c7UdXf
+[17] https://www.rhyslindmark.com/incentive-infrastructure/?utm_source=tldrnewsletter
+[18] https://github.com/goblint/cil?utm_source=tldrnewsletter
+[19] https://www.neowin.net/news/early-apple-m4-pro-and-m4-max-benchmarks-hint-at-a-massive-performance-boost/?utm_source=tldrnewsletter
+[20] https://jondlm.github.io/website/blog/leaving_stripe/?utm_source=tldrnewsletter
+[21] https://getfluently.notion.site/Y-Combinator-Application-Guide-1286a9ce04d98004b4dac50cf66fb883?utm_source=tldrnewsletter
+[22] https://refer.tldr.tech/5cbcb975/
+[23] https://hub.sparklp.co/sub_65fc64da1ec1/1
+[24] https://advertise.tldr.tech/?utm_source=tldr&utm_medium=newsletter&utm_campaign=advertisecta
+[25] https://a.tldrnewsletter.com/unsubscribe?ep=1&l=cfa2d55a-b7be-11e8-a3c9-06b79b628af2&lc=4c29695b-384c-11ea-be00-06b4694bee2a&p=7a633c0a-9a82-11ef-b075-51a80ef80d17&pt=campaign&pv=4&spa=1730718051&t=1730719279&s=f32bc2bc4b304a20ce107a7664ae01869fb5e3a2cfd12609224d5cfb011248dc
+[26] https://tldr.tech/tech/manage?email=unaigaraymaestre%40gmail.com
