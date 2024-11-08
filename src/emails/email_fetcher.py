@@ -6,7 +6,7 @@ from typing import Dict, List
 from rich.logging import RichHandler
 
 from emails.auth import LocalAuth
-from emails.content_parser import ContentParserInterface
+from emails.parsers.content_parser_interface import ContentParserInterface
 
 LOGGER_LEVEL = os.getenv("LOGGER_LEVEL", "WARNING")
 logging.basicConfig(level=LOGGER_LEVEL, format="%(message)s", handlers=[RichHandler()])
@@ -140,8 +140,6 @@ class EmailFetcher:
         for email in emails:
             email_data = self.get_email_data(email["id"])
             content = self.get_body(email_data)
-            print("--- EMAIL ---")
-            print(content)
             articles += content_parser.parse_content(content)
         logger.info(f"Extracted {len(articles)} articles from emails.")
         return articles

@@ -1,8 +1,9 @@
 import json
+
 from rich import print
 
-from emails.content_parser import TLDRContentParser
 from emails.email_fetcher import EmailFetcher
+from emails.parsers.tldr_content_parser import TLDRContentParser
 
 
 def main():

@@ -20,7 +20,7 @@ article formatting.
 import json
 import os
 
-from emails.content_parser import TLDRContentParser
+from emails.parsers.tldr_content_parser import TLDRContentParser
 
 
 def load_test_data(email_path: str, articles_path: str):

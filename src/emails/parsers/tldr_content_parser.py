@@ -1,41 +1,17 @@
 import logging
 import os
 import re
-from abc import ABC, abstractmethod
 from typing import Dict, List, Tuple
 
 from rich.logging import RichHandler
+
+from emails.parsers.content_parser_interface import ContentParserInterface
 
 LOGGER_LEVEL = os.environ.get("LOGGER_LEVEL", "WARNING").upper()
 logging.basicConfig(
     level=LOGGER_LEVEL, format="%(message)s", datefmt="[%X]", handlers=[RichHandler()]
 )
 logger = logging.getLogger(__name__)
-
-
-class ContentParserInterface(ABC):
-    """
-    Abstract base class for content parsers.
-    """
-
-    @abstractmethod
-    def parse_content(self, content: str) -> List[Dict[str, str]]:
-        """
-        Parse content and extract articles.
-
-        Args:
-            content: Raw email content
-
-        Returns:
-            List of dictionaries containing:
-                - title: Article title
-                - content: Article content
-                - section: Section the article belongs to
-                - reading_time: Extracted reading time in minutes
-                - newsletter_type: Either 'TLDR' or 'TLDR AI'
-                - link: The URL of the article
-        """
-        pass
 
 
 class TLDRContentParser(ContentParserInterface):
@@ -83,7 +59,6 @@ class TLDRContentParser(ContentParserInterface):
         current_section = None
         i = 0
 
-        # Extract link mappings
         link_mappings = self._extract_links(lines)
 
         while i < len(lines):

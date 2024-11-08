@@ -1,6 +1,9 @@
-from emails.content_parser import TLDRContentParser
-from rich import print
 import json
+
+from rich import print
+
+from emails.parsers.tldr_content_parser import TLDRContentParser
+
 
 def read_test_file(filename: str) -> str:
     with open(filename, 'r', encoding='utf-8') as f:
