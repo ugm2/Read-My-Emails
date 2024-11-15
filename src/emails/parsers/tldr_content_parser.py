@@ -1,17 +1,10 @@
-import logging
-import os
 import re
 from typing import Dict, List, Tuple
 
-from rich.logging import RichHandler
-
 from emails.parsers.content_parser_interface import ContentParserInterface
+from logging_config import setup_logging
 
-LOGGER_LEVEL = os.environ.get("LOGGER_LEVEL", "WARNING").upper()
-logging.basicConfig(
-    level=LOGGER_LEVEL, format="%(message)s", datefmt="[%X]", handlers=[RichHandler()]
-)
-logger = logging.getLogger(__name__)
+logger = setup_logging(__name__)
 
 
 class TLDRContentParser(ContentParserInterface):
@@ -53,14 +46,19 @@ class TLDRContentParser(ContentParserInterface):
         logger.info("TLDRContentParser initialized with patterns")
 
     def parse_content(self, content: str) -> List[Dict[str, str]]:
+        logger.info("Starting content parsing")
         newsletter_type = "TLDR AI" if "TLDR AI" in content else "TLDR"
+        logger.debug(f"Detected newsletter type: {newsletter_type}")
+        
         articles = []
         lines = content.splitlines()
         current_section = None
         i = 0
-
+        
+        logger.debug("Extracting link mappings")
         link_mappings = self._extract_links(lines)
-
+        logger.debug(f"Found {len(link_mappings)} link mappings")
+        
         while i < len(lines):
             line = lines[i].strip()
 
@@ -70,20 +68,23 @@ class TLDRContentParser(ContentParserInterface):
 
             if self._is_section_header(line):
                 current_section = line
+                logger.debug(f"Found section header: {current_section}")
                 i += 1
                 continue
-
+            
             if self._is_article_start(line):
+                logger.debug(f"Found article start at line {i}")
                 article, i = self._parse_article(
                     lines, i, current_section, newsletter_type, link_mappings
                 )
                 if article:
+                    logger.debug(f"Successfully parsed article: {article['title']}")
                     articles.append(article)
                 continue
-
+            
             i += 1
-
-        logger.info(f"Parsed {len(articles)} articles from {newsletter_type}")
+        
+        logger.info(f"Finished parsing {len(articles)} articles from {newsletter_type}")
         return articles
 
     def _extract_links(self, lines: List[str]) -> Dict[str, str]:

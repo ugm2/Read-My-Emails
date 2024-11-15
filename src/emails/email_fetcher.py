@@ -1,16 +1,11 @@
 import base64
-import logging
-import os
 from typing import Dict, List
-
-from rich.logging import RichHandler
 
 from emails.auth import LocalAuth
 from emails.parsers.content_parser_interface import ContentParserInterface
+from logging_config import setup_logging
 
-LOGGER_LEVEL = os.getenv("LOGGER_LEVEL", "WARNING")
-logging.basicConfig(level=LOGGER_LEVEL, format="%(message)s", handlers=[RichHandler()])
-logger = logging.getLogger("EmailFetcher")
+logger = setup_logging(__name__)
 
 
 class EmailFetcher:
@@ -72,7 +67,7 @@ class EmailFetcher:
         Returns:
             The email data.
         """
-        logger.log(1, f"Fetching data for email ID: {email_id}")
+        logger.debug(f"Retrieving data for email ID: {email_id}")
         return self.service.users().messages().get(userId="me", id=email_id).execute()
 
     def fetch_labels(self) -> List[Dict]:
@@ -108,20 +103,32 @@ class EmailFetcher:
         logger.error(f"No label found with the name {label_name}")
         raise ValueError(f"No label found with the name {label_name}")
 
-    def get_body(self, email: Dict) -> str:
-        """
-        Gets the body of the email.
-
-        Args:
-            email: The email data.
-
-        Returns:
-            The email body.
-        """
-        parts = email["payload"].get("parts")
-        data = parts[0]["body"]["data"] if parts else email["payload"]["body"]["data"]
-        logger.info("Decoding email body.")
-        return base64.urlsafe_b64decode(data).decode("utf-8")
+    def get_body(self, email_data: Dict) -> str:
+        """Extract the email body from the email data."""
+        logger.debug("Extracting and decoding email body")
+        
+        try:
+            # Get the message payload
+            payload = email_data['payload']
+            
+            # For simple messages
+            if 'body' in payload and 'data' in payload['body']:
+                return base64.urlsafe_b64decode(payload['body']['data']).decode('utf-8')
+            
+            # For multipart messages
+            if 'parts' in payload:
+                # Get the first text part (usually the email body)
+                for part in payload['parts']:
+                    if part.get('mimeType', '').startswith('text/'):
+                        if 'data' in part['body']:
+                            return base64.urlsafe_b64decode(part['body']['data']).decode('utf-8')
+            
+            logger.warning("No readable content found in email")
+            return ""
+            
+        except Exception as e:
+            logger.error(f"Failed to extract email body: {e}")
+            return ""
 
     def get_articles_from_emails(
         self, emails: List[Dict], content_parser: ContentParserInterface

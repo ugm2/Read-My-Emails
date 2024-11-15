@@ -1,15 +1,13 @@
-import logging
 import os
 import pickle
 
 from google.auth.transport.requests import Request
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
-from rich.logging import RichHandler
 
-LOGGER_LEVEL = os.getenv("LOGGER_LEVEL", "WARNING")
-logging.basicConfig(level=LOGGER_LEVEL, format="%(message)s", handlers=[RichHandler()])
-logger = logging.getLogger("LocalAuth")
+from logging_config import setup_logging
+
+logger = setup_logging(__name__)
 
 class LocalAuth:
     def __init__(
@@ -44,6 +42,7 @@ class LocalAuth:
 
     def _read_token(self, blob_name: str):
         """Reads token from a local file."""
+        logger.debug(f"Reading token from: {blob_name}")
         if os.path.exists(blob_name):
             with open(blob_name, "rb") as token:
                 return pickle.load(token)
@@ -51,5 +50,6 @@ class LocalAuth:
 
     def _write_token(self, creds, blob_name: str):
         """Writes token to a local file."""
+        logger.debug(f"Writing token to: {blob_name}")
         with open(blob_name, "wb") as token:
             pickle.dump(creds, token)
